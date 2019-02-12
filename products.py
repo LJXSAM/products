@@ -1,26 +1,19 @@
 import os 
 
-products = []
+#读取档案
+products = [] 
 if os.path.isfile('products.csv'):
 	print('yeah!找到档案了！')
 	with open('products.csv', 'r', encoding = 'utf-8') as f:
 		for line in f:
-			if '商品,价格'in line:
+			if '商品,价格' in line:
 				continue
 		name, price = line.split().split(',')
-	
+		products.append([name,price])
+	print(products)	
 else:
 	print('档案不存在。。。。。')
 
-
-# 读取档案
-products = []
-with open('products.csv', 'r', encoding = 'utf-8') as f:
-	for line in f:
-		if '商品,价格'in line:
-			continue
-		name, price = line.split().split(',')
-		products.qppend([name, price ])
 print(products)
    
 # 让使用者输入
@@ -41,4 +34,4 @@ for p in products:
 with open ('products.csv ','w', encoding = 'utf-8') as f :
 	f.write('商品,价格\n')
 	for p in products:
-		f.write (p[0] + ',' + str(p[0]) + '\n')
+		f.write (p[0] + ',' + str(p[1]) + '\n')
