@@ -24,6 +24,7 @@ with open('products.csv', 'r', encoding = 'utf-8') as f:
 print(products)
    
 # 让使用者输入
+while True: 
 	name = input('请输入商品名称:')
 	if name == 'q':
 		break 
